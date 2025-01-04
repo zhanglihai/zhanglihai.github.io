@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I started building websites in 2000 on 263.net and 163.com  and writing blogs. many years ago, built blogs by [Wordpress](https://wordpress.com/). All blogs deleted,because I forgot to renew hosting service. Recently I suddenly occurred to me to write what about life and books and tech and others. so I rebuild the blog by [GitHub pages](https://pages.github.com). to be continued...
+I started building websites in 2000 on platforms like 263.net and 163.com and began writing blogs. Many years ago, I used [WordPress](https://wordpress.com/) to create blogs, but all of them were deleted because I forgot to renew the hosting service. Recently, it suddenly occurred to me to start writing again—about life, books, technology, and other topics. So, I decided to rebuild my blog using [GitHub Pages](https://pages.github.com). To be continued...
 
 
 Thanks 
