@@ -14,7 +14,7 @@ Work experience
 * Since 2012: Alibab Group
   * Worked in the SRE team 
   * Duties includes: Built operation & monitor platform 
-  * Worked in the Cloud Security team
+  * Work in the Cloud Security team
   * Duties includes: SSL Certificate,RASP,etc. cloud security product development
 
   
