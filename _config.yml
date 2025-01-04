@@ -24,11 +24,12 @@ author:
   avatar           : "cat-icons.png"
   name             : "About"
   pronouns         : # example: "she/her"  
-  bio              : "" #Short biography for the left-hand sidebar
+  bio              : "I’m working at Alibaba Cloud,focus on security product research and development." #Short biography for the left-hand sidebar
   location         : "Beijing"
   employer         : "Alibaba Cloud"
   uri              : # URL
   email            : "" 
+  twitter          : "https://x.com/zhanglihai"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
