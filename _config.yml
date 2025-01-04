@@ -24,7 +24,7 @@ author:
   avatar           : "cat-icons.png"
   name             : "About"
   pronouns         : # example: "she/her"  
-  bio              : "I’m working at Alibaba Cloud,focus on security product research and development." #Short biography for the left-hand sidebar
+  bio              : "I’m working at Alibaba Cloud,focus on security product development." #Short biography for the left-hand sidebar
   location         : "Beijing,China"
   employer         : "Alibaba Cloud"
   uri              : # URL
