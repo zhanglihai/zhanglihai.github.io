@@ -50,7 +50,7 @@ author:
 
   # Social media
   bluesky          : #"bsky.app" # Replace this with you Bluesky username
-  facebook         : "zhanglihai" # Username
+  facebook         : # "zhanglihai" # Username
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
@@ -71,7 +71,7 @@ author:
   weibo            : "u/1768721815" # Username
   wikipedia        : # Username
   xing             : # Username
-  youtube          : "zhanglihai" # Username
+  youtube          : # "zhanglihai" # Username
   zhihu            : "zhanglihai" # Username
 
 # Publication Category - The following the list of publication categories and their headings
