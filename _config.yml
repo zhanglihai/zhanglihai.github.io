@@ -21,14 +21,14 @@ repository               : "zhanglihai/zhanglihai.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  avatar           : "cat-icons.png"
+  name             : "About"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "" #Short biography for the left-hand sidebar
+  location         : "Beijing"
+  employer         : "Alibaba Cloud"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
