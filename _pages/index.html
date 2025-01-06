@@ -7,8 +7,7 @@ redirect_from:
   - /wordpress/blog-posts/
 ---
 <script>
-  $(document).ready(
-    function(){
+    document.onload=function(){
       try{
         obj=jQuery.getJSON("https://peapix.com/bing/feed?country=us");
         var imgArray=obj.responseJSON;
@@ -17,7 +16,6 @@ redirect_from:
         $("#daily_pic").attr("src",picUrl);
       }catch{}
     }
-  );
 </script>
 <h3>
   Yesterday's the history, tomorrow's the future, but today is a gift. That's why it's called the present.
