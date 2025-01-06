@@ -15,11 +15,18 @@ redirect_from:
 <script>
       try{
         console.log("try to loading pic...");
-        obj=jQuery.getJSON("https://peapix.com/bing/feed?country=us");
-        var imgArray=obj.responseJSON;
-        var r=Math.floor(Math.random()*imgArray.length);
-        var picUrl=imgArray[r].fullUrl;
-        $("#daily_pic").attr("src",picUrl);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var obj = JSON.parse(this.responseText);
+            var imgArray=obj.responseJSON;
+            var r=Math.floor(Math.random()*imgArray.length);
+            var picUrl=imgArray[r].fullUrl;
+            $("#daily_pic").attr("src",picUrl); 
+        }
+      };
+      xmlhttp.open("GET", "https://peapix.com/bing/feed?country=us", true);
+      xmlhttp.send();
       }catch(e){
         console.log(e);
       }
