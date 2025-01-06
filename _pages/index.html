@@ -14,6 +14,7 @@ redirect_from:
 
 <script>
       try{
+        console.log("try to loading pic...");
         obj=jQuery.getJSON("https://peapix.com/bing/feed?country=us");
         var imgArray=obj.responseJSON;
         var r=Math.floor(Math.random()*imgArray.length);
