@@ -6,8 +6,13 @@ author_profile: true
 redirect_from:
   - /wordpress/blog-posts/
 ---
+
+<h3>
+  Yesterday's the history, tomorrow's the future, but today is a gift. That's why it's called the present.
+</h3>
+<img src="https://www.bing.com/th?id=OHR.PlumParakeet_ROW9086396762_1920x1080.webp&qlt=80" height="432" width="768" id="daily_pic"/>
+
 <script>
-    document.onload=function(e){
       try{
         obj=jQuery.getJSON("https://peapix.com/bing/feed?country=us");
         var imgArray=obj.responseJSON;
@@ -15,9 +20,4 @@ redirect_from:
         var picUrl=imgArray[r].fullUrl;
         $("#daily_pic").attr("src",picUrl);
       }catch{}
-    }
 </script>
-<h3>
-  Yesterday's the history, tomorrow's the future, but today is a gift. That's why it's called the present.
-</h3>
-<img src="https://www.bing.com/th?id=OHR.PlumParakeet_ROW9086396762_1920x1080.webp&qlt=80" height="432" width="768" id="daily_pic"/>
