@@ -19,5 +19,7 @@ redirect_from:
         var r=Math.floor(Math.random()*imgArray.length);
         var picUrl=imgArray[r].fullUrl;
         $("#daily_pic").attr("src",picUrl);
-      }catch{}
+      }catch(e){
+        console.log(e);
+      }
 </script>
