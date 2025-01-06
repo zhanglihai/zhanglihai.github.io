@@ -18,7 +18,9 @@ redirect_from:
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
             var obj = JSON.parse(this.responseText);
+            console.log(obj);
             var imgArray=obj.responseJSON;
             var r=Math.floor(Math.random()*imgArray.length);
             var picUrl=imgArray[r].fullUrl;
