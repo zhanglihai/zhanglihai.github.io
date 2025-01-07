@@ -6,27 +6,59 @@ author_profile: true
 redirect_from:
   - /wordpress/blog-posts/
 ---
+<style>
+.img-container{
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  max-width: 780px;
+  position: relative;
+    height: 435px;
+    background: linear-gradient(to right,rgba(0,0,0,0.3),rgba(0,0,0,0));
+}
+@media (max-width:480px){
+  .img-slider img{
+    width: 100%;
+  }
+}
+.img-slider img{
+    display: block;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
 
+</style>
 <h3>
   Yesterday's the history, tomorrow's the future, but today is a gift. That's why it's called the present.
 </h3>
-<img src="https://www.bing.com/th?id=OHR.PlumParakeet_ROW9086396762_1920x1080.webp&qlt=80" height="432" width="768" id="daily_pic"/>
+<div class="img-container">
+  <div class="img-slider">
+    <img src="https://www.bing.com/th?id=OHR.PlumParakeet_ROW9086396762_1920x1080.webp&qlt=80" height="432" width="768" id="daily_pic"/>
+  </div>
+</div>
 
 <script>
       try{
-        console.log("try to loading pic...");
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-            var imgArray = JSON.parse(this.responseText);
-            var r=Math.floor(Math.random()*imgArray.length);
-            var picUrl=imgArray[r].fullUrl;
-            $("#daily_pic").attr("src",picUrl); 
+          var imgUrlArray=[];
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              console.log(this.responseText);
+              var imgArray = JSON.parse(this.responseText);
+              for(var i=0;i<imgArray.length;i++){
+                imgUrlArray.push(imgArray[i].fullUrl);
+              }
+          }
+        };
+        xmlhttp.open("GET", "https://peapix.com/bing/feed?country=us", true);
+        xmlhttp.send();
+        function changePic(){
+              if(imgUrlArray.length>0){
+                var r=Math.floor(Math.random()*imgUrlArray.length);
+                $("#daily_pic").attr("src",imgUrlArray[r]); 
+              }
         }
-      };
-      xmlhttp.open("GET", "https://peapix.com/bing/feed?country=us", true);
-      xmlhttp.send();
+        setInterval(changePic,5000);
       }catch(e){
         console.log(e);
       }
