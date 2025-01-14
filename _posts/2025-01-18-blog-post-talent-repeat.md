@@ -9,3 +9,5 @@ tags:
 If you don't have talent, then repat.
 
 Talent can be a great advatage, but is not only path to success. If you don't naturally gifted in something, don't worry.
+
+The key is repetition. by practicing regularly and putting in consistent effort, you can achieve your goals.
