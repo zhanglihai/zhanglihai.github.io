@@ -1,7 +1,7 @@
 ---
 title: 'Talent And Repeat'
 date: 2025-01-18
-permalink: /posts/2025/01/blog-post-talent-repeat/
+permalink: /posts/2025/01/blog-post-talent-repeat-practice/
 tags:
   - english
   - practice
