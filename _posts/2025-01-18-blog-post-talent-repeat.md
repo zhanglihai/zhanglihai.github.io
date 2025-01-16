@@ -3,7 +3,8 @@ title: 'Talent And Repeat'
 date: 2025-01-18
 permalink: /posts/2025/01/blog-post-talent-repeat/
 tags:
-  - blog
+  - english
+  - practice
 ---
 
 
