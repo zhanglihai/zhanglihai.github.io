@@ -11,7 +11,7 @@ redirect_from:
 
 Work experience
 ======
-* Since 2012: Alibab Group
+* Since 2012: Alibaba Group
   * Worked in the SRE team 
   * Duties includes: Built operation & monitor platform 
   * Work in the cloud security team
