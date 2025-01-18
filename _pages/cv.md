@@ -14,7 +14,7 @@ Work experience
 * Since 2012: Alibaba Group
   * Worked in the SRE team 
   * Duties includes: Built operation & monitor platform 
-  * Work in the cloud security team
+  * Working in the cloud security team
   * Duties includes: SSL certificate,RASP,etc. cloud security product development
 
   
@@ -26,7 +26,8 @@ Skills
   * Java 20+ years
   * Python 15+ years
   * Go Lang 5+ years
-  * bash,SQL,15+ years
+  * SQL,JavaScript,CSS,HTML 15+ years
+  * Proficient in Linux commands
 
  
 Service and leadership
