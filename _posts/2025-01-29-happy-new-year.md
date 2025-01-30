@@ -8,6 +8,7 @@ tags:
 ---
 
 
-<span style="color:red">**Today is the first day of the Chinese Lunar New Year, Zhēngyuè Chūyī.**</span>
+**Today is the first day of the Chinese Lunar New Year, Zhēngyuè Chūyī.**
 
-**Wishing everyone Happy New Year, joy for the whole family, good health, and great success in all things.**
+<span style="color: red">
+**Wishing everyone Happy New Year, joy for the whole family, good health, and great success in all things.**</span>
