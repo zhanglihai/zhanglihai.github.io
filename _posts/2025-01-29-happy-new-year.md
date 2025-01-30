@@ -10,4 +10,4 @@ tags:
 
 **Today is the first day of the Chinese Lunar New Year, Zhēngyuè Chūyī.**
 
-Wishing everyone Happy New Year, joy for the whole family, good health, and great success in all things. 
+**Wishing everyone Happy New Year, joy for the whole family, good health, and great success in all things.**
