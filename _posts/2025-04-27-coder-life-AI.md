@@ -9,7 +9,7 @@ tags:
 ---
 
 
->Games Gosling, the father of Java, described it as a 'Blue Colar Language' that was a 'Pretty Simple' in 1997.
+>James Gosling, the father of Java, described it as a 'Blue Colar Language' that was a 'Pretty Simple' in 1997.
 
 
 24年前，那时 Java 程序员并不多。随着互联网泡沫结束，一些新兴的公司选择了 Java 做为企业级应用开发语言，那可能是 Java 程序员最好时机，那时没有人会觉得 Java 是蓝领语言，这个时候我也从 VB/Delphi 程序员转向了 Java 程序员。
