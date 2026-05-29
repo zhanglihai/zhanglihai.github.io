@@ -13,11 +13,6 @@ I first started building websites back in 2000, on platforms like 263.net and 16
 
 In January 2025, the urge to write came back. I wanted a place to put down thoughts on life, books, technology, and whatever else crosses my mind. This time, I went with [GitHub Pages](https://pages.github.com) — no hosting fees to forget, no databases to maintain. Just code and words.
 
-## What You'll Find Here
-
-- Reflections on the **AI era** and what it means for those of us who write code for a living
-- Nostalgia for the **early days of computing** — dial-up modems, Windows 95, and the people who made magic with limited tools
-- Notes on **books, life, and the occasional philosophical tangent**
 
 ## About Me
 
