@@ -22,13 +22,14 @@ redirect_from:
 .img-slider img{
     display: block;
     width: 100%;
-    transition: transform 0.5s ease;
+    transition: opacity 0.8s ease;
+  }
+.img-slider img.fade-out{
+    opacity: 0;
   }
 
 </style>
-<h3>
-  Yesterday is history, tomorrow is a mystery, but today is a gift. That's why it's called the present.
-</h3>
+<h3 id="daily_quote" style="opacity:0;transition:opacity 0.6s ease"></h3>
 <div class="img-container">
   <div class="img-slider">
     <img src="https://www.bing.com/th?id=OHR.PlumParakeet_ROW9086396762_1920x1080.webp&qlt=80" height="432" width="768" id="daily_pic"/>
@@ -36,16 +37,48 @@ redirect_from:
 </div>
 
 <script>
+      var quotes = [
+        "The only way to do great work is to love what you do. — Steve Jobs",
+        "Stay hungry, stay foolish. — Steve Jobs",
+        "路漫漫其修远兮，吾将上下而求索。—— 屈原",
+        "天行健，君子以自强不息。——《周易》",
+        "知之为知之，不知为不知，是知也。—— 孔子",
+        "Code is like humor. When you have to explain it, it's bad. — Cory House",
+        "千里之行，始于足下。—— 老子",
+        "The best time to plant a tree was 20 years ago. The second best time is now. — Chinese Proverb",
+        "学而不思则罔，思而不学则殆。—— 孔子",
+        "Simplicity is the ultimate sophistication. — Leonardo da Vinci",
+        "不积跬步，无以至千里；不积小流，无以成江海。—— 荀子",
+        "Talk is cheap. Show me the code. — Linus Torvalds",
+        "博观而约取，厚积而薄发。—— 苏轼",
+        "First, solve the problem. Then, write the code. — John Johnson",
+        "己所不欲，勿施于人。—— 孔子",
+        "Any fool can write code that a computer can understand. Good programmers write code that humans can understand. — Martin Fowler",
+        "世事洞明皆学问，人情练达即文章。—— 曹雪芹",
+        "Yesterday is history, tomorrow is a mystery, but today is a gift. That's why it's called the present. — Kung Fu Panda",
+        "纸上得来终觉浅，绝知此事要躬行。—— 陆游",
+        "The future belongs to those who believe in the beauty of their dreams. — Eleanor Roosevelt"
+      ];
+      var q = quotes[Math.floor(Math.random() * quotes.length)];
+      var el = document.getElementById("daily_quote");
+      el.textContent = q;
+      el.style.opacity = "1";
+
       try{
           var imgUrlArray=[];
+          var preloaded={};
           var xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-              console.log(this.responseText);
               var imgArray = JSON.parse(this.responseText);
               for(var i=0;i<imgArray.length;i++){
                 imgUrlArray.push(imgArray[i].fullUrl);
               }
+              imgUrlArray.forEach(function(url){
+                var img = new Image();
+                img.src = url;
+                preloaded[url] = img;
+              });
           }
         };
         xmlhttp.open("GET", "https://peapix.com/bing/feed?country=us", true);
@@ -53,10 +86,15 @@ redirect_from:
         function changePic(){
               if(imgUrlArray.length>0){
                 var r=Math.floor(Math.random()*imgUrlArray.length);
-                $("#daily_pic").attr("src",imgUrlArray[r]); 
+                var pic=document.getElementById("daily_pic");
+                pic.classList.add("fade-out");
+                setTimeout(function(){
+                  pic.src=imgUrlArray[r];
+                  pic.classList.remove("fade-out");
+                },800);
               }
         }
-        setInterval(changePic,3000);
+        setInterval(changePic,7000);
       }catch(e){
         console.log(e);
       }
