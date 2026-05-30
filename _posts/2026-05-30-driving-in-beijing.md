@@ -15,7 +15,11 @@ This year, however, is different. I have already had three incidents.
 
 The first happened when I was waiting at a red turn signal. A cyclist hit me from behind, and then the girl just turned her bike and rode away.
 
-The sencond time,a women on motocycle hit my car. She didn't stop and just rode off. Then yesterday, another women driver aggressively cut int my lane and crash into my car.
+The sencond time,a woman on a motocycle hit my car. She didn't stop and just rode off. Then yesterday, another woman driver aggressively cut into my lane and crashed into my car.
 
-There seem to be more and more reckless drivers on the road lately.
+It feels like there are more and more reckless drivers on the road these days.
+
+![Driving In Beijing](/images/2026-05/2026-05-30.png)
+
+
  
