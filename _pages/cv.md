@@ -21,7 +21,7 @@ Senior software engineer with 20+ years of experience in large-scale system desi
 *2012 – Present · Beijing, China*
 
 **Cloud Security Team** *(Current)*
-- Lead development of cloud security products including SSL Certificate Management, RASP (Runtime Application Self-Protection), and WAF
+- Lead development of cloud security products including SSL Certificate Management, RASP (Runtime Application Self-Protection), and Vulnerability Scanner
 - Design and implement security solutions serving Alibaba Cloud's enterprise customers
 - Drive product architecture decisions for high-availability security services
 
