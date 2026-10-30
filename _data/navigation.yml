@@ -20,6 +20,9 @@ main:
   - title: "Tags"
     url: /tags/
 
+  - title: "Sports"
+    url: /sports/
+
   - title: "About"
     url: /about/blog/ 
 
