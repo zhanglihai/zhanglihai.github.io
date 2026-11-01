@@ -132,7 +132,7 @@
       ...Array.from({ length: 12 }, (_, index) => `<button type="button" class="sports-filter-button" data-value="${index + 1}" aria-pressed="false">${index + 1}</button>`)
     ].join("");
     root.innerHTML = `<a class="sports-back" href="/sports/">&larr; Back to Sports</a>
-      ${heroHtml(`${year} Sports Summary`, "Explore cumulative distance, time, activities, and calories by sport and month. Individual activities are not published.", data.totals, "ANNUAL MOTION ARCHIVE")}
+      ${heroHtml(`${year} Sports Summary`, "Explore cumulative distance, time, activities, and calories by sport and month.", data.totals, "ANNUAL MOTION ARCHIVE")}
       <div class="sports-toolbar" aria-label="Sports filters">
         <div class="sports-filter-row">
           <span class="sports-filter-label" id="sportsSportLabel">Sport</span>
