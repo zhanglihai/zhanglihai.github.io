@@ -103,32 +103,59 @@
     </div>`).join("") || '<div class="sports-empty">No data available</div>';
   }
 
-  function refreshYear(data) {
-    const sportSlug = document.querySelector("#sportsSportFilter").value;
-    const selectedMonth = document.querySelector("#sportsMonthFilter").value;
-    const sport = data.sports.find((item) => item.sport_slug === sportSlug);
+  function refreshYear(data, filters) {
+    const sport = data.sports.find((item) => item.sport_slug === filters.sport);
     const months = sport ? sport.months : data.months;
-    const totals = selectedMonth ? months[Number(selectedMonth) - 1] : (sport || data.totals);
+    const totals = filters.month ? months[Number(filters.month) - 1] : (sport || data.totals);
+    for (const [id, selected] of [["sportsSportFilter", filters.sport], ["sportsMonthFilter", filters.month]]) {
+      document.querySelectorAll(`#${id} button[data-value]`).forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.value === selected));
+      });
+    }
     document.querySelector("#sportsDynamicMetrics").innerHTML = metricsHtml(totals);
-    document.querySelector("#sportsMonthChart").innerHTML = monthChart(months, selectedMonth);
-    document.querySelector("#sportsComposition").innerHTML = compositionHtml(sport ? [sport] : data.sports, selectedMonth);
+    document.querySelector("#sportsMonthChart").innerHTML = monthChart(months, filters.month);
+    document.querySelector("#sportsComposition").innerHTML = compositionHtml(sport ? [sport] : data.sports, filters.month);
   }
 
   async function renderYear() {
     const year = Number(root.dataset.year);
     const data = await getJson(`${DATA_ROOT}/years/${year}.json`);
     const requestedSport = new URLSearchParams(location.search).get("sport") || "";
+    const filters = {
+      sport: data.sports.some((item) => item.sport_slug === requestedSport) ? requestedSport : "",
+      month: "",
+    };
+    const sportButtons = [{ sport_slug: "", sport: "All sports" }, ...data.sports].map((item) =>
+      `<button type="button" class="sports-filter-button" data-value="${escapeHtml(item.sport_slug)}" aria-pressed="false">${escapeHtml(item.sport)}</button>`
+    ).join("");
+    const monthButtons = [`<button type="button" class="sports-filter-button" data-value="" aria-pressed="false">All year</button>`,
+      ...Array.from({ length: 12 }, (_, index) => `<button type="button" class="sports-filter-button" data-value="${index + 1}" aria-pressed="false">${index + 1}</button>`)
+    ].join("");
     root.innerHTML = `<a class="sports-back" href="/sports/">&larr; Back to Sports</a>
       ${heroHtml(`${year} Sports Summary`, "Explore cumulative distance, time, activities, and calories by sport and month. Individual activities are not published.", data.totals, "ANNUAL MOTION ARCHIVE")}
-      <div class="sports-toolbar"><label><span>Sport</span><select id="sportsSportFilter"><option value="">All sports</option>${data.sports.map((item) => `<option value="${escapeHtml(item.sport_slug)}">${escapeHtml(item.sport)}</option>`).join("")}</select></label>
-      <label><span>Month</span><select id="sportsMonthFilter"><option value="">All year</option>${monthNames.map((name,i)=>`<option value="${i+1}">${name}</option>`).join("")}</select></label><button class="sports-button" id="sportsReset">Reset</button></div>
+      <div class="sports-toolbar" aria-label="Sports filters">
+        <div class="sports-filter-row">
+          <span class="sports-filter-label" id="sportsSportLabel">Sport</span>
+          <div class="sports-filter-options" id="sportsSportFilter" role="group" aria-labelledby="sportsSportLabel">${sportButtons}</div>
+        </div>
+        <div class="sports-filter-row">
+          <span class="sports-filter-label" id="sportsMonthLabel">Month</span>
+          <div class="sports-filter-options sports-filter-months" id="sportsMonthFilter" role="group" aria-labelledby="sportsMonthLabel">${monthButtons}</div>
+        </div>
+      </div>
       <div id="sportsDynamicMetrics"></div>
       <section class="sports-analytics"><article class="sports-panel"><p class="sports-eyebrow">MONTHLY DISTANCE</p><h3>Distance by Month</h3><div class="sports-chart" id="sportsMonthChart"></div></article>
       <article class="sports-panel"><p class="sports-eyebrow">SPORT MIX</p><h3>Distance by Sport</h3><div class="sports-composition" id="sportsComposition"></div></article></section>`;
-    document.querySelector("#sportsSportFilter").value = data.sports.some((item) => item.sport_slug === requestedSport) ? requestedSport : "";
-    ["sportsSportFilter", "sportsMonthFilter"].forEach((id) => document.querySelector(`#${id}`).addEventListener("change", () => refreshYear(data)));
-    document.querySelector("#sportsReset").addEventListener("click", () => { document.querySelector("#sportsSportFilter").value = ""; document.querySelector("#sportsMonthFilter").value = ""; refreshYear(data); });
-    refreshYear(data);
+    for (const [id, key] of [["sportsSportFilter", "sport"], ["sportsMonthFilter", "month"]]) {
+      const group = document.querySelector(`#${id}`);
+      group.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-value]");
+        if (!button || !group.contains(button)) return;
+        filters[key] = button.dataset.value;
+        refreshYear(data, filters);
+      });
+    }
+    refreshYear(data, filters);
   }
 
   const renderers = { home: renderHome, year: renderYear };
