@@ -128,7 +128,7 @@
     const sportButtons = [{ sport_slug: "", sport: "All sports" }, ...data.sports].map((item) =>
       `<button type="button" class="sports-filter-button" data-value="${escapeHtml(item.sport_slug)}" aria-pressed="false">${escapeHtml(item.sport)}</button>`
     ).join("");
-    const monthButtons = [`<button type="button" class="sports-filter-button" data-value="" aria-pressed="false">All year</button>`,
+    const monthButtons = [`<button type="button" class="sports-filter-button" data-value="" aria-pressed="false">All months</button>`,
       ...Array.from({ length: 12 }, (_, index) => `<button type="button" class="sports-filter-button" data-value="${index + 1}" aria-pressed="false">${index + 1}</button>`)
     ].join("");
     root.innerHTML = `<a class="sports-back" href="/sports/">&larr; Back to Sports</a>
